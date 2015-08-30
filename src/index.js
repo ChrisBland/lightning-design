@@ -5,7 +5,7 @@ import Container from './components/Container.jsx';
 import PageHeader from './components/PageHeader.jsx';
 import Col from './components/Col.jsx';
 
-module.exports = {
+export default  {
   Grid: Grid,
   Container: Container,
   PageHeader: PageHeader,

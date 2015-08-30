@@ -23,6 +23,7 @@ var gulp = require('gulp'),
       distHtml: './',
       distImg: 'dist/img'
     };
+var babel = require("gulp-babel");
 
 gulp.task('clean', function(cb) {
   del(['dist'], cb);
@@ -34,6 +35,12 @@ gulp.task('browserSync', function() {
       baseDir: './'
     }
   });
+});
+
+gulp.task("transpile", function () {
+  return gulp.src("./src/**")
+    .pipe(babel())
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task('watchify', function() {

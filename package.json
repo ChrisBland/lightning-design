@@ -30,6 +30,7 @@
     "eslint": "^0.23.0",
     "eslint-plugin-react": "^2.5.2",
     "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
     "gulp-changed": "^1.2.1",
     "gulp-eslint": "^0.14.0",
     "gulp-html-replace": "^1.5.1",
