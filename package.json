@@ -1,14 +1,14 @@
 {
   "name": "lightning-design",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React.js port of Salesforce.com Lighting Design System",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" :{  
-    "type" : "git",
-     "url" : "https://github.com/ChrisBland/lightning-design"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrisBland/lightning-design"
   },
   "keywords": [
     "reactjs",
