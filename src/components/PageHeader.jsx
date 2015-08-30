@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
-import Grid from "./Grid.jsx";
-import Col from "./Col.jsx";
-import Icon from "./Icon.jsx";
+import Grid from "./Grid";
+import Col from "./Col";
+import Icon from "./Icon";
 
 const PageHeader = React.createClass({
 

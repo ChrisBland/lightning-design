@@ -16,17 +16,17 @@ var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _GridJsx = require("./Grid.jsx");
+var _Grid = require("./Grid");
 
-var _GridJsx2 = _interopRequireDefault(_GridJsx);
+var _Grid2 = _interopRequireDefault(_Grid);
 
-var _ColJsx = require("./Col.jsx");
+var _Col = require("./Col");
 
-var _ColJsx2 = _interopRequireDefault(_ColJsx);
+var _Col2 = _interopRequireDefault(_Col);
 
-var _IconJsx = require("./Icon.jsx");
+var _Icon = require("./Icon");
 
-var _IconJsx2 = _interopRequireDefault(_IconJsx);
+var _Icon2 = _interopRequireDefault(_Icon);
 
 var PageHeader = _react2["default"].createClass({
   displayName: "PageHeader",
@@ -39,10 +39,10 @@ var PageHeader = _react2["default"].createClass({
       "div",
       _extends({}, this.props, { className: (0, _classnames2["default"])(this.props.className, classes) }),
       _react2["default"].createElement(
-        _GridJsx2["default"],
+        _Grid2["default"],
         null,
         _react2["default"].createElement(
-          _ColJsx2["default"],
+          _Col2["default"],
           { flexiTruncate: true },
           _react2["default"].createElement(
             "p",
@@ -50,7 +50,7 @@ var PageHeader = _react2["default"].createClass({
             this.props.heading
           ),
           _react2["default"].createElement(
-            _GridJsx2["default"],
+            _Grid2["default"],
             null,
             _react2["default"].createElement(
               "div",
@@ -63,7 +63,7 @@ var PageHeader = _react2["default"].createClass({
               _react2["default"].createElement(
                 "button",
                 { className: "slds-button slds-button--icon-bare slds-shrink-none slds-align-middle slds-m-left--x-small" },
-                _react2["default"].createElement(_IconJsx2["default"], { svgClasses: "slds-button__icon slds-button__icon--x-small", href: "/assets/icons/utility-sprite/svg/symbols.svg#down" }),
+                _react2["default"].createElement(_Icon2["default"], { svgClasses: "slds-button__icon slds-button__icon--x-small", href: "/assets/icons/utility-sprite/svg/symbols.svg#down" }),
                 _react2["default"].createElement(
                   "span",
                   { className: "slds-assistive-text" },

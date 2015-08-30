@@ -6,28 +6,28 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _componentsGridJsx = require('./components/Grid.jsx');
+var _componentsGrid = require('./components/Grid');
 
-var _componentsGridJsx2 = _interopRequireDefault(_componentsGridJsx);
+var _componentsGrid2 = _interopRequireDefault(_componentsGrid);
 
-var _componentsContainerJsx = require('./components/Container.jsx');
+var _componentsContainer = require('./components/Container');
 
-var _componentsContainerJsx2 = _interopRequireDefault(_componentsContainerJsx);
+var _componentsContainer2 = _interopRequireDefault(_componentsContainer);
 
-var _componentsPageHeaderJsx = require('./components/PageHeader.jsx');
+var _componentsPageHeader = require('./components/PageHeader');
 
-var _componentsPageHeaderJsx2 = _interopRequireDefault(_componentsPageHeaderJsx);
+var _componentsPageHeader2 = _interopRequireDefault(_componentsPageHeader);
 
-var _componentsColJsx = require('./components/Col.jsx');
+var _componentsCol = require('./components/Col');
 
-var _componentsColJsx2 = _interopRequireDefault(_componentsColJsx);
+var _componentsCol2 = _interopRequireDefault(_componentsCol);
 
 require("babel/register");
 
 exports['default'] = {
-  Grid: _componentsGridJsx2['default'],
-  Container: _componentsContainerJsx2['default'],
-  PageHeader: _componentsPageHeaderJsx2['default'],
-  Col: _componentsColJsx2['default']
+  Grid: _componentsGrid2['default'],
+  Container: _componentsContainer2['default'],
+  PageHeader: _componentsPageHeader2['default'],
+  Col: _componentsCol2['default']
 };
 module.exports = exports['default'];
