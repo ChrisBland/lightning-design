@@ -24100,26 +24100,20 @@ var _classnames2 = _interopRequireDefault(_classnames);
 var Container = _react2["default"].createClass({
   displayName: "Container",
 
-  propTypes: {
-    pullRight: _react2["default"].PropTypes.bool
-  },
-
-  getDefaultProps: function getDefaultProps() {
-    return {
-      pullRight: false
-    };
-  },
-
   render: function render() {
     var classes = {
-      "slds-grid--frame": this.props.frame ? true : false
+      "slds-container--small": this.props.small ? true : false,
+      "slds-container--medium": this.props.medium ? true : false,
+      "slds-container--large": this.props.large ? true : false,
+      "slds-container--fluid": this.props.fluid ? true : false,
+      "slds-container--left": this.props.left ? true : false,
+      "slds-container--right": this.props.right ? true : false,
+      "slds-container--center": this.props.center ? true : false
     };
     return _react2["default"].createElement(
       "div",
-      _extends({}, this.props, {
-        className: (0, _classnames2["default"])(this.props.className, classes) }),
-      this.props.children,
-      "test"
+      _extends({}, this.props, { className: (0, _classnames2["default"])(this.props.className, classes) }),
+      this.props.children
     );
   }
 });
@@ -24152,8 +24146,9 @@ var Grid = _react2["default"].createClass({
   render: function render() {
     console.log(this.props);
     var classes = {
-      "slds-grid": Object.keys(this.props).length === 1 ? true : false,
-      "slds-grid--frame": this.props.frame ? true : false
+      "slds-grid": this.props.base ? true : false,
+      "slds-grid--frame": this.props.frame ? true : false,
+      "slds-grid--align-center": this.props.center ? true : false
     };
     return _react2["default"].createElement(
       "div",
@@ -24186,6 +24181,47 @@ var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var Icon = _react2["default"].createClass({
+  displayName: "Icon",
+
+  render: function render() {
+    var classes = {};
+    var useTag = "<use xlink:href='" + this.props.href + "'></use>";
+    return _react2["default"].createElement(
+      "span",
+      _extends({}, this.props, { className: (0, _classnames2["default"])(this.props.className, classes) }),
+      _react2["default"].createElement("svg", { "aria-hidden": "true", className: this.props.svgClasses, dangerouslySetInnerHTML: { __html: useTag } }),
+      _react2["default"].createElement(
+        "span",
+        { className: "slds-assistive-text" },
+        "Announcement Icon"
+      )
+    );
+  }
+});
+
+exports["default"] = Icon;
+module.exports = exports["default"];
+
+},{"classnames":188,"react":343}],348:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _GridJsx = require("./Grid.jsx");
 
 var _GridJsx2 = _interopRequireDefault(_GridJsx);
@@ -24194,6 +24230,10 @@ var _ColJsx = require("./Col.jsx");
 
 var _ColJsx2 = _interopRequireDefault(_ColJsx);
 
+var _IconJsx = require("./Icon.jsx");
+
+var _IconJsx2 = _interopRequireDefault(_IconJsx);
+
 var PageHeader = _react2["default"].createClass({
   displayName: "PageHeader",
 
@@ -24201,8 +24241,6 @@ var PageHeader = _react2["default"].createClass({
     var classes = {
       "slds-page-header": true
     };
-    var useTag = "<use xlink:href='/assets/icons/utility-sprite/svg/symbols.svg#down'></use>";
-
     return _react2["default"].createElement(
       "div",
       _extends({}, this.props, { className: (0, _classnames2["default"])(this.props.className, classes) }),
@@ -24231,7 +24269,7 @@ var PageHeader = _react2["default"].createClass({
               _react2["default"].createElement(
                 "button",
                 { className: "slds-button slds-button--icon-bare slds-shrink-none slds-align-middle slds-m-left--x-small" },
-                _react2["default"].createElement("svg", { "aria-hidden": "true", className: "slds-button__icon", dangerouslySetInnerHTML: { __html: useTag } }),
+                _react2["default"].createElement(_IconJsx2["default"], { svgClasses: "slds-button__icon slds-button__icon--x-small", href: "/assets/icons/utility-sprite/svg/symbols.svg#down" }),
                 _react2["default"].createElement(
                   "span",
                   { className: "slds-assistive-text" },
@@ -24249,7 +24287,7 @@ var PageHeader = _react2["default"].createClass({
 exports["default"] = PageHeader;
 module.exports = exports["default"];
 
-},{"./Col.jsx":344,"./Grid.jsx":346,"classnames":188,"react":343}],348:[function(require,module,exports){
+},{"./Col.jsx":344,"./Grid.jsx":346,"./Icon.jsx":347,"classnames":188,"react":343}],349:[function(require,module,exports){
 "use strict";
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -24263,6 +24301,7 @@ var _index = require("./index");
 var _index2 = _interopRequireDefault(_index);
 
 var Grid = _index2["default"].Grid;
+var Container = _index2["default"].Container;
 var Col = _index2["default"].Col;
 var PageHeader = _index2["default"].PageHeader;
 
@@ -24273,26 +24312,35 @@ var App = _react2["default"].createClass({
     return _react2["default"].createElement(
       Grid,
       { frame: true },
-      _react2["default"].createElement(PageHeader, { heading: "LDS Demo", title: "Test123" }),
+      _react2["default"].createElement(PageHeader, { heading: "Lightning-React", title: "Examples" }),
       _react2["default"].createElement(
-        Grid,
-        { style: { backgroundColor: "red" } },
+        Container,
+        { medium: true, center: true },
         _react2["default"].createElement(
-          Col,
-          { style: { backgroundColor: "blue" } },
+          Grid,
+          { base: true },
           _react2["default"].createElement(
-            "h1",
+            Col,
             null,
-            "test"
+            _react2["default"].createElement(
+              Container,
+              { medium: true },
+              _react2["default"].createElement(PageHeader, { heading: "LDS Dem12o", title: "Test123" })
+            )
           )
         ),
+        _react2["default"].createElement("hr", null),
         _react2["default"].createElement(
-          Col,
-          null,
+          Grid,
+          { base: true },
           _react2["default"].createElement(
-            "h1",
+            Col,
             null,
-            "test"
+            _react2["default"].createElement(
+              Container,
+              { medium: true },
+              _react2["default"].createElement(PageHeader, { heading: "14 Demo", title: "Test123" })
+            )
           )
         )
       )
@@ -24306,7 +24354,7 @@ if (typeof window !== "undefined") {
   };
 }
 
-},{"./index":349,"react":343}],349:[function(require,module,exports){
+},{"./index":350,"react":343}],350:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -24336,4 +24384,4 @@ module.exports = {
   Col: _componentsColJsx2['default']
 };
 
-},{"./components/Col.jsx":344,"./components/Container.jsx":345,"./components/Grid.jsx":346,"./components/PageHeader.jsx":347,"babel/register":186}]},{},[348]);
+},{"./components/Col.jsx":344,"./components/Container.jsx":345,"./components/Grid.jsx":346,"./components/PageHeader.jsx":348,"babel/register":186}]},{},[349]);

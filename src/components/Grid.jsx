@@ -6,8 +6,9 @@ const Grid = React.createClass({
   render() {
     console.log(this.props);
     let classes = {
-      "slds-grid": Object.keys(this.props).length === 1 ? true : false,
-      "slds-grid--frame": this.props.frame ? true : false
+      "slds-grid": this.props.base ? true : false,
+      "slds-grid--frame": this.props.frame ? true : false,
+      "slds-grid--align-center": this.props.center ? true : false
     };
     return (
       <div
