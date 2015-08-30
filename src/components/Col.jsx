@@ -5,8 +5,9 @@ import classNames from "classnames";
 const Col = React.createClass({
   render() {
     let classes = {
-      "slds-col": true,
-      "slds-has-flexi-truncate": this.props.flexiTruncate ? true : false
+      "slds-col": this.props.padded ? false : true,
+      "slds-has-flexi-truncate": this.props.flexiTruncate ? true : false,
+      "slds-col--padded": this.props.padded ? true : false
     };
     return (
       <div
