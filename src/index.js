@@ -8,7 +8,7 @@ import Spinner from './components/Spinner.js';
 import Card from './components/Card.js';
 import Button from './components/Button.js';
 import Badge from './components/Badge.js';
-
+import Box from './components/Box.js';
 
 export default  {
   Grid: Grid,
@@ -18,5 +18,6 @@ export default  {
   Spinner: Spinner,
   Card: Card,
   Button: Button,
-  Badge: Badge
+  Badge: Badge,
+  Box: Box
 };
