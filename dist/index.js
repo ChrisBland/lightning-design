@@ -38,6 +38,10 @@ var _componentsBadgeJs = require('./components/Badge.js');
 
 var _componentsBadgeJs2 = _interopRequireDefault(_componentsBadgeJs);
 
+var _componentsBoxJs = require('./components/Box.js');
+
+var _componentsBoxJs2 = _interopRequireDefault(_componentsBoxJs);
+
 require("babel/register");
 
 exports['default'] = {
@@ -48,6 +52,7 @@ exports['default'] = {
   Spinner: _componentsSpinnerJs2['default'],
   Card: _componentsCardJs2['default'],
   Button: _componentsButtonJs2['default'],
-  Badge: _componentsBadgeJs2['default']
+  Badge: _componentsBadgeJs2['default'],
+  Box: _componentsBoxJs2['default']
 };
 module.exports = exports['default'];
