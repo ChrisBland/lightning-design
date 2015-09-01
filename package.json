@@ -1,6 +1,6 @@
 {
   "name": "lightning-design",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A React.js port of Salesforce.com Lighting Design System",
   "main": "dist/index.js",
   "scripts": {
