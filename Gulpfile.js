@@ -17,9 +17,9 @@ var gulp = require('gulp'),
     image = require('gulp-image'),
     reload = browserSync.reload,
     p = {
-      jsx: './src/demo.jsx',
+      jsx: './example/demo.jsx',
       bundle: 'app.js',
-      distJs: 'build/js',
+      distJs: 'example/js',
       distHtml: './',
       distImg: 'dist/img'
     };
@@ -90,17 +90,17 @@ gulp.task('image', function () {
 });
 
 gulp.task('lint', function() {
-  return gulp.src('src/**/*.jsx')
+  return gulp.src('src/**/')
     .pipe(eslint())
     .pipe(eslint.format());
 });
 
 gulp.task('watchTask', function() {
-  gulp.watch('src/**/*.jsx', ['lint']);
+  gulp.watch('src/**/*.js');
 });
 
 gulp.task('watch', ['clean'], function() {
-  gulp.start(['browserSync', 'watchTask', 'watchify', 'lint', 'image']);
+  gulp.start(['browserSync', 'watchTask', 'watchify', 'image']);
 });
 
 gulp.task('build', ['clean'], function() {

@@ -1,13 +1,22 @@
 require("babel/register");
 
-import Grid from './components/Grid';
-import Container from './components/Container';
-import PageHeader from './components/PageHeader';
-import Col from './components/Col';
+import Grid from './components/Grid.js';
+import Container from './components/Container.js';
+import PageHeader from './components/PageHeader.js';
+import Col from './components/Col.js';
+import Spinner from './components/Spinner.js';
+import Card from './components/Card.js';
+import Button from './components/Button.js';
+import Badge from './components/Badge.js';
+
 
 export default  {
   Grid: Grid,
   Container: Container,
   PageHeader: PageHeader,
-  Col: Col
+  Col: Col,
+  Spinner: Spinner,
+  Card: Card,
+  Button: Button,
+  Badge: Badge
 };

@@ -4,11 +4,12 @@ import classNames from "classnames";
 
 const Grid = React.createClass({
   render() {
-    console.log(this.props);
     let classes = {
       "slds-grid": this.props.base ? true : false,
       "slds-grid--frame": this.props.frame ? true : false,
-      "slds-grid--align-center": this.props.center ? true : false
+      "slds-grid--align-center": this.props.center ? true : false,
+      "slds-grid--align-spread": this.props.spread ? true : false,
+      "slds-grid--align-space": this.props.alignSpace ? true : false
     };
     return (
       <div
