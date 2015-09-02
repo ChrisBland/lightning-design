@@ -1,5 +1,3 @@
-require("babel/register");
-
 import Grid from './components/Grid.js';
 import Container from './components/Container.js';
 import PageHeader from './components/PageHeader.js';
@@ -9,6 +7,7 @@ import Card from './components/Card.js';
 import Button from './components/Button.js';
 import Badge from './components/Badge.js';
 import Box from './components/Box.js';
+import Text from './components/Text.js';
 
 export default  {
   Grid: Grid,
@@ -19,5 +18,6 @@ export default  {
   Card: Card,
   Button: Button,
   Badge: Badge,
-  Box: Box
+  Box: Box,
+  Text: Text
 };

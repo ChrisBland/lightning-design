@@ -42,7 +42,9 @@ var _componentsBoxJs = require('./components/Box.js');
 
 var _componentsBoxJs2 = _interopRequireDefault(_componentsBoxJs);
 
-require("babel/register");
+var _componentsTextJs = require('./components/Text.js');
+
+var _componentsTextJs2 = _interopRequireDefault(_componentsTextJs);
 
 exports['default'] = {
   Grid: _componentsGridJs2['default'],
@@ -53,6 +55,7 @@ exports['default'] = {
   Card: _componentsCardJs2['default'],
   Button: _componentsButtonJs2['default'],
   Badge: _componentsBadgeJs2['default'],
-  Box: _componentsBoxJs2['default']
+  Box: _componentsBoxJs2['default'],
+  Text: _componentsTextJs2['default']
 };
 module.exports = exports['default'];

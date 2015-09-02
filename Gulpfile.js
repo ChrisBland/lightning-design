@@ -43,7 +43,7 @@ gulp.task("transpile", function () {
     .pipe(gulp.dest("dist"));
 });
 
-gulp.task('watchify', function() {
+gulp.task('watchify', ['transpile'], function() {
   var bundler = watchify(browserify(p.jsx, watchify.args));
 
   function rebundle() {
