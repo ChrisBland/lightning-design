@@ -46,6 +46,14 @@ var _componentsTextJs = require('./components/Text.js');
 
 var _componentsTextJs2 = _interopRequireDefault(_componentsTextJs);
 
+var _componentsSelectListJs = require('./components/SelectList.js');
+
+var _componentsSelectListJs2 = _interopRequireDefault(_componentsSelectListJs);
+
+var _componentsOptionJs = require('./components/Option.js');
+
+var _componentsOptionJs2 = _interopRequireDefault(_componentsOptionJs);
+
 exports['default'] = {
   Grid: _componentsGridJs2['default'],
   Container: _componentsContainerJs2['default'],
@@ -56,6 +64,8 @@ exports['default'] = {
   Button: _componentsButtonJs2['default'],
   Badge: _componentsBadgeJs2['default'],
   Box: _componentsBoxJs2['default'],
-  Text: _componentsTextJs2['default']
+  Text: _componentsTextJs2['default'],
+  SelectList: _componentsSelectListJs2['default'],
+  Option: _componentsOptionJs2['default']
 };
 module.exports = exports['default'];

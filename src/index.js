@@ -8,6 +8,8 @@ import Button from './components/Button.js';
 import Badge from './components/Badge.js';
 import Box from './components/Box.js';
 import Text from './components/Text.js';
+import SelectList from './components/SelectList.js'
+import Option from './components/Option.js'
 
 export default  {
   Grid: Grid,
@@ -19,5 +21,7 @@ export default  {
   Button: Button,
   Badge: Badge,
   Box: Box,
-  Text: Text
+  Text: Text,
+  SelectList: SelectList,
+  Option: Option
 };

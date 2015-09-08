@@ -2,9 +2,13 @@ require("babel/register");
 import React from "react";
 
 import LDS from "../dist/index.js";
+import SelectListExample from "./components/SelectList.jsx";
+import TextExample from "./components/Text.jsx";
+import ContainerExample from "./components/ContainerExample.jsx";
+import BadgeExample from "./components/BadgeExample.jsx";
 
 import {Box, Text} from "../dist/index.js";
-
+ 
 let Grid = LDS.Grid;
 let Container = LDS.Container;
 let Col = LDS.Col; 
@@ -13,76 +17,48 @@ let Spinner = LDS.Spinner;
 let Card = LDS.Card;
 let Button = LDS.Button;
 let Badge = LDS.Badge;
+let SelectList = LDS.SelectList;
 
 var App = React.createClass({
-
+  getInitialState: function(){
+    return {
+      selectedValue: 1
+    };
+  },
+  changeEvt: function(changeObj){
+    this.setState({
+      selectedValue: changeObj.value
+    });
+  },
   render: function() {
+    var opts = [];
+    for(var i = 1; i < 25; i++){
+      opts.push({label: ''+i, value: i});
+    }
     return (
-      <Grid>
-        <PageHeader heading="Lightning-React" title="Examples"/>
+      <Grid base>
+        <Col padded className="slds-size--1-of-6 slds-medium-size--1-of-6 slds-large-size--1-of-6">
+          <Text heading="medium">React Lightning Components</Text>
+          <Grid>
+            <ul className="slds-list--vertical slds-has-dividers">
+              <li className="slds-list__item"><a href="#select">Select List</a></li>
+              <li className="slds-list__item"><a href="#text">Text</a></li>
+              <li className="slds-list__item"><a href="#containers">Containers</a></li>
+              <li className="slds-list__item"><a href="#badges">Badges</a></li>
+            </ul>
+          </Grid>
+        </Col>
+        <Col className="slds-size--5-of-6 slds-medium-size--5-of-6 slds-large-size--5-of-6"> 
+          <PageHeader heading="Lightning-React" title="Examples"/>
+          <SelectListExample/>
+          <hr/>
+          <TextExample/>
+          <hr/>
+          <ContainerExample/>
+          <hr/>
+          <BadgeExample/>
+        </Col>
           <Container large center>
-            <Grid base>
-              <Col>
-                <PageHeader heading="Ui" title="Text"/>
-                <Text heading="large">Large Heading</Text>
-                <Text heading="medium">Medium Heading</Text>
-                <Text heading="small">Small Heading</Text>
-                <Text heading="label">Label Heading</Text>
-              </Col>
-            </Grid>
-            <hr/> 
-            <Grid base>
-              <Col>
-                <PageHeader heading="Ui" title="Container"/>
-                <Grid>
-                  <Container small>
-                    <Box theme="shade">
-                      <Text base>Small</Text>
-                    </Box>
-                  </Container>
-                </Grid>
-                <Grid>
-                  <Container small center>
-                    <Box theme="shade">
-                      <Text base>Center</Text>
-                    </Box>
-                  </Container>
-                </Grid>
-                <Grid>
-                  <Container small right>
-                    <Box theme="shade">
-                      <Text base>Right</Text>
-                    </Box>
-                  </Container>
-                </Grid>
-                <Grid>
-                  <Container medium>
-                  <Box theme="alt-inverse">
-                    <Text base>Medium</Text>
-                  </Box>
-                </Container>
-                </Grid>
-                <Grid>
-                  <Container medium center>
-                    <Box theme="warning">
-                      <Text base>Medium Center</Text>
-                    </Box>
-                  </Container>
-                </Grid>
-                <Grid>
-                  <Container medium right>
-                    <Box theme="offline">
-                      <Text base>Medium right</Text>
-                    </Box>
-                  </Container>
-                </Grid>
-                <Container large>
-                  <Box theme="danger">
-                    <Text base>Large</Text>
-                  </Box>
-                </Container>
-              </Col>
-            </Grid>
             <hr/> 
             <PageHeader heading="UI" title="Grid"/>
             <Text heading="label">Base</Text>
@@ -362,25 +338,11 @@ var App = React.createClass({
                   <Button inverse text="Button"/>
                 </Col>
               </Grid>
-              
             </Box>
              
             <hr/> 
-            <PageHeader heading="UI" title="Badges"/>
-            <Grid base alignSpace>
-              <Col padded>
-                <Badge>Default</Badge>
-              </Col>
-              <Col padded>
-                <Badge theme="default">Default Theme</Badge>
-              </Col>
-              <Col padded>
-                <Badge theme="shade">Shade Theme</Badge>
-              </Col>
-              <Col padded>
-                <Badge theme="inverse">Inverse Theme</Badge>
-              </Col>
-            </Grid>
+            
+            
         </Container>
       </Grid>
     );
